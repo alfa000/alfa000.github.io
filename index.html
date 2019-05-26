@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
+	<meta name="keywords" content="smk pasim ,adnan al-farizi rahmat, adnan, al-farizi, rahmat, web developer, junior web developer, alfa000"/>
 	
 	
 	<!-- Font -->
@@ -17,11 +18,10 @@
 	
 	<link href="common-css/ionicons.css" rel="stylesheet">
 	
-	<link href="common-css/fluidbox.min.css" rel="stylesheet">
-	
 	<link href="01-cv-portfolio/css/styles.css" rel="stylesheet">
 	
 	<link href="01-cv-portfolio/css/responsive.css" rel="stylesheet">
+	<link  href="fancybox/dist/jquery.fancybox.min.css" rel="stylesheet">
 	
 </head>
 <body>
@@ -77,7 +77,7 @@
 						<h4 class="font-yellow">Junior Web Developer</h4>
 						<ul class="information margin-tb-30">
 							<li><b>Tanggal Lahir : </b>24 Maret 2001</li>
-							<li><b>Email : </b>adnanarahmat45h@mygmail.com</li>
+							<li><b>Email : </b>adnanarahmat45h@gmail.com</li>
 							<li><b>Status : </b>Belum Menikah</li>
 						</ul>
 						<ul class="social-icons">
@@ -112,12 +112,17 @@
 				</div><!-- col-sm-8 -->
 			</div><!-- row -->
 		</div><!-- container -->
-		
+
 		<div class="portfolioContainer">
-			
 			<div class="p-item web-design">
-				<a href="images/portfolio-1-600x400.jpg" data-fluidbox>
-					<img src="images/portfolio-1-600x400.jpg" alt=""></a>
+				<a data-fancybox="gallery" href="images/portfolio-1-600x400.jpg" data-caption="Caption for single image">
+			    	<img src="images/portfolio-1-600x400.jpg">
+				</a>
+			</div>
+			<div class="p-item web-design">
+				<a data-fancybox="gallery" href="images/portfolio-1-600x400.jpg">
+			    	<img src="images/portfolio-1-600x400.jpg">
+				</a>
 			</div><!-- p-item -->
 			
 			<div class="p-item branding graphic-design">
@@ -224,7 +229,7 @@
 		</div><!-- container -->
 	</section><!-- about-section -->
 	
-	<!-- <section class="experience-section section">
+	<section class="experience-section section">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4">
@@ -234,21 +239,6 @@
 					</div>
 				</div>
 				<div class="col-sm-8">
-				
-					<div class="experience margin-b-50">
-						<h4><b>JUNIOR PROJECT MANAGER</b></h4>
-						<h5 class="font-yellow"><b>DESIGN STUDIO</b></h5>
-						<h6 class="margin-t-10">MARCH 2015 - PRESENT</h6>
-						<p class="font-semi-white margin-tb-30">Duis non volutpat arcu, eu mollis tellus. Sed finibus aliquam neque sit amet sodales. 
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus pellentes que velit, 
-							quis consequat nulla effi citur at. Maecenas sed massa tristique.Duis non volutpat arcu, 
-							eu mollis tellus. Sed finibus aliquam neque sit amet sodales. </p>
-						<ul class="list margin-b-30">
-							<li>Duis non volutpat arcu, eu mollis tellus.</li>
-							<li>Quis consequat nulla effi citur at.</li>
-							<li>Sed finibus aliquam neque sit.</li>
-						</ul>
-					</div>
 					
 					<div class="experience margin-b-50">
 						<h4><b>WEB MASTER/WEB DEVELOPER</b></h4>
@@ -267,7 +257,7 @@
 				</div>
 			</div>
 		</div>
-	</section> -->
+	</section>
 	<!-- experience-section -->
 	
 	<section class="education-section section">
@@ -282,20 +272,21 @@
 				<div class="col-sm-8">
 					<div class="education-wrapper">
 						<div class="education margin-b-50">
+							<h4><b>SMK Pasim Plus Sukabumi</b></h4>
+							<h5 class="font-yellow"><b>Rekayasa Perangkat Lunak</b></h5>
+							<h6 class="font-lite-black margin-t-10">GRADUATED IN JUN 2016(3 YEARS)</h6>
+						</div><!-- education -->
+
+						<div class="education margin-b-50">
+							<h4><b>SMP Negeri 3 Kota Sukabumi</b></h4>
+							<h6 class="font-lite-black margin-t-10">GRADUATED IN JUN 2013(3 YEARS)</h6>
+						</div><!-- education -->
+
+						<div class="education margin-b-50">
 							<h4><b>SD Negeri Lembursitu</b></h4>
 							<h6 class="font-lite-black margin-t-10">GRADUATED IN JUN 2007(6 YEARS)</h6>
 						</div><!-- education -->
 						
-						<div class="education margin-b-50">
-							<h4><b>SMP Negeri 3 Kota Sukabumi</b></h4>
-							<h6 class="font-lite-black margin-t-10">GRADUATED IN MAY 2013(3 YEARS)</h6>
-						</div><!-- education -->
-						
-						<div class="education margin-b-50">
-							<h4><b>SMK Pasim Plus Sukabumi</b></h4>
-							<h5 class="font-yellow"><b>Rekayasa Perangkat Lunak</b></h5>
-							<h6 class="font-lite-black margin-t-10">GRADUATED IN MAY 2016(3 YEARS)</h6>
-						</div><!-- education -->
 					</div><!-- education-wrapper -->
 				</div><!-- col-sm-8 -->
 			</div><!-- row -->
@@ -354,6 +345,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	
 	<script src="common-js/jquery-3.2.1.min.js"></script>
 	
+	<script src="fancybox/dist/jquery.fancybox.min.js"></script>
+
 	<script src="common-js/tether.min.js"></script>
 	
 	<script src="common-js/bootstrap.js"></script>
@@ -364,7 +357,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	
 	<script src="common-js/progressbar.min.js"></script>
 	
-	<script src="common-js/jquery.fluidbox.min.js"></script>
 	
 	<script src="common-js/scripts.js"></script>
 	
