@@ -1,353 +1,525 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<!-- Save this as index.html -->
+<!doctype html>
+<html lang="id">
 <head>
-	<title>Adnan Al-farizi Rahmat</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="UTF-8">
-	<meta name="keywords" content="smk pasim ,adnan al-farizi rahmat, adnan, al-farizi, rahmat, web developer, junior web developer, alfa000"/>
-	
-	
-	<!-- Font -->
-	
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700%7CAllura" rel="stylesheet">
-	
-	<!-- Stylesheets -->
-	
-	<link href="common-css/bootstrap.css" rel="stylesheet">
-	
-	<link href="common-css/ionicons.css" rel="stylesheet">
-	
-	<link href="01-cv-portfolio/css/styles.css" rel="stylesheet">
-	
-	<link href="01-cv-portfolio/css/responsive.css" rel="stylesheet">
-	<link  href="fancybox/dist/jquery.fancybox.min.css" rel="stylesheet">
-	
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adnan Al-Farizi Rahmat — CV / Portfolio</title>
+
+  <!-- Basic SEO -->
+  <meta name="description" content="Adnan Al-Farizi Rahmat — Software Developer (Backend & Full Stack). CV & selected projects." />
+
+  <!-- Google Fonts (Inter) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --card:#0f1720;
+      --muted:#98a0b3;
+      --accent:#3b82f6;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --maxw:1100px;
+      --gap:20px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,var(--bg),#050506 140%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:32px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:var(--maxw);
+    }
+
+    /* Top bar */
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .avatar{
+      width:64px;
+      height:64px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),#06b6d4);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      color:white;
+      font-size:18px;
+      box-shadow:0 6px 18px rgba(11,11,12,0.6);
+    }
+    .name{
+      font-size:18px;
+      font-weight:700;
+      line-height:1;
+    }
+    .sub{
+      color:var(--muted);
+      font-size:13px;
+      margin-top:2px;
+    }
+
+    /* Hero */
+    .hero{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:var(--radius);
+      padding:28px;
+      display:flex;
+      gap:var(--gap);
+      align-items:center;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+    }
+    .hero-left{flex:1; min-width:250px}
+    .role{
+      color:var(--accent);
+      font-weight:700;
+      font-size:13px;
+      letter-spacing:0.6px;
+      display:inline-block;
+      margin-bottom:12px;
+    }
+    h1{
+      margin:0;
+      font-size:28px;
+      line-height:1.05;
+    }
+    p.lead{
+      margin-top:12px;
+      color:var(--muted);
+      max-width:70ch;
+    }
+    .cta{
+      margin-top:18px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+    }
+    .btn-primary{
+      background:linear-gradient(90deg,var(--accent),#06b6d4);
+      color:#021025;
+      box-shadow:0 8px 30px rgba(59,130,246,0.12);
+    }
+    .btn-ghost{
+      border:1px solid rgba(255,255,255,0.06);
+      color:var(--muted);
+      background:transparent;
+    }
+
+    .meta{
+      display:flex;
+      gap:12px;
+      margin-top:10px;
+      color:var(--muted);
+      font-size:14px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .meta a{color:var(--muted); text-decoration:none}
+    .hero-right{
+      width:340px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:12px;
+      padding:14px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .skill-badges{display:flex; gap:8px; flex-wrap:wrap;}
+    .badge{
+      background:var(--glass);
+      padding:8px 10px;
+      border-radius:10px;
+      font-weight:600;
+      font-size:13px;
+      color:#cfe7ff;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+
+    /* Layout */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:20px;
+      margin-top:20px;
+    }
+
+    /* Main columns */
+    main.card{
+      background:transparent;
+    }
+    .section{
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      border-radius:12px;
+      padding:18px;
+      margin-bottom:14px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .section h3{
+      margin:0 0 12px 0;
+      font-size:16px;
+    }
+    .muted{color:var(--muted); font-size:13px}
+
+    /* Timeline / experiences */
+    .timeline{display:flex; flex-direction:column; gap:14px}
+    .exp{
+      display:flex;
+      gap:12px;
+    }
+    .exp .period{
+      min-width:110px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .exp .body h4{
+      margin:0;
+      font-size:15px;
+      font-weight:700;
+    }
+    .exp .body ul{margin:8px 0 0 18px; padding:0; color:var(--muted); font-size:14px}
+
+    /* Projects */
+    .projects-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap:12px;
+    }
+    .project{
+      padding:12px;
+      border-radius:12px;
+      background:rgba(255,255,255,0.02);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .project .stack{margin-top:8px; display:flex; gap:6px; flex-wrap:wrap}
+    .pill{font-size:12px; padding:6px 8px; border-radius:8px; background:rgba(255,255,255,0.02); color:var(--muted); border:1px solid rgba(255,255,255,0.01)}
+
+    /* Sidebar */
+    aside{
+      position:relative;
+      top:0;
+    }
+    .card-about{
+      padding:16px;
+      border-radius:12px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .contact-list{display:flex; flex-direction:column; gap:8px; margin-top:10px}
+    .contact-item{display:flex; gap:8px; align-items:center; color:var(--muted); font-size:14px}
+    .skill-list{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
+
+    /* Footer */
+    footer{
+      margin-top:22px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* Responsiveness */
+    @media (max-width:980px){
+      .grid{grid-template-columns: 1fr; padding-bottom:40px}
+      .hero{flex-direction:column}
+      .hero-right{width:100%}
+      body{padding:20px}
+    }
+
+    /* Print-friendly (simple) */
+    @media print{
+      body{background:white;color:black}
+      .hero-right, .badge, .pill{page-break-inside:avoid}
+    }
+  </style>
 </head>
 <body>
-	
-	<header>
-		<div class="container">
-			<div class="heading-wrapper">
-				<div class="row">
-					<div class="col-sm-6 col-md-6 col-lg-4">
-						<div class="info">
-							<i class="icon ion-ios-location-outline"></i>
-							<div class="right-area">
-								<h5>Jl. Pelabuhan 2 Km 7</h5>
-								<h5>Kebon Manggu, Kab Sukabumi</h5>
-							</div><!-- right-area -->
-						</div><!-- info -->
-					</div><!-- col-sm-4 -->
-					
-					<div class="col-sm-6 col-md-6 col-lg-4">
-						<div class="info">
-							<i class="icon ion-ios-telephone-outline"></i>
-							<div class="right-area">
-								<h5 class="margin-t-10">0813-3983-8390</h5>
-								<!-- <h6>24 Jam</h6> -->
-							</div><!-- right-area -->
-						</div><!-- info -->
-					</div><!-- col-sm-4 -->
-					
-					<div class="col-sm-6 col-md-6 col-lg-4">
-						<div class="info">
-							<i class="icon ion-ios-chatboxes-outline"></i>
-							<div class="right-area">
-								<h5>adnanarahmat45@gmail.com</h5>
-								<!-- <h6>24 Jam</h6> -->
-							</div><!-- right-area -->
-						</div><!-- info -->
-					</div><!-- col-sm-4 -->
-				</div><!-- row -->
-			</div><!-- heading-wrapper -->
-			
-			<a class="downlad-btn" href="cv.pdf" target="_blank">Download CV</a>
-		</div><!-- container -->
-	</header>
-	
-	<section class="intro-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-1 col-lg-2"></div>
-				<div class="col-md-10 col-lg-8">
-					<div class="intro">
-						<div class="profile-img"><img src="me.jpg" alt=""></div>
-						<h2><b>Adnan Al-farizi Rahmat</b></h2>
-						<h4 class="font-yellow">Programmer</h4>
-						<ul class="information margin-tb-30">
-							<li><b>Tanggal Lahir : </b>24 Maret 2001</li>
-							<li><b>Email : </b>adnanarahmat45@gmail.com</li>
-							<li><b>No Hp : </b>0813-3983-8390</li>
-						</ul>
-						<ul class="social-icons">
-							<!-- <li><a href="#"><i class="ion-social-pinterest"></i></a></li> -->
-							<li><a href="https://id.linkedin.com/in/adnan-al-farizi-rahmat-233796191" target="_blank"><i class="ion-social-linkedin"></i></a></li>
-							<li><a href="https://www.instagram.com/adnan.a.rahmat/" target="_blank"><i class="ion-social-instagram" target="_blank"></i></a></li>
-							<li><a href="https://www.facebook.com/adnan.a.rahmat" target="_blank"><i class="ion-social-facebook" target="_blank"></i></a></li>
-							<li><a href="https://github.com/alfa000/" target="_blank"><i class="ion-social-github"></i></a></li>
-						</ul>
-					</div><!-- intro -->
-				</div><!-- col-sm-8 -->
-			</div><!-- row -->
-		</div><!-- container -->
-	</section><!-- intro-section -->
-	
-	<section class="portfolio-section section">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="heading">
-						<h3><b>Portfolio</b></h3>
-						<h6 class="font-lite-black"><b>MY WORK</b></h6>
-					</div>
-				</div><!-- col-sm-4 -->
-				<div class="col-sm-8">
-					<div class="portfolioFilter clearfix margin-b-80">
-						<!-- <a href="#" data-filter="*" class="current"><b>ALL</b></a>
-						<a href="#" data-filter=".web"><b>WEB</b></a> -->
-						<!-- <a href="#" data-filter=".dekstop"><b>Dekstop</b></a>
-						<a href="#" data-filter=".mobile"><b>Mobile</b></a>
-						<a href="#" data-filter=".graphic-design"><b>GRAPHIC DESIGN</b></a>
-						<a href="#" data-filter=".animation"><b>Adnimation</b></a> -->
-					</div><!-- portfolioFilter -->
-				</div><!-- col-sm-8 -->
-			</div><!-- row -->
-		</div><!-- container -->
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="avatar">AA</div>
+        <div>
+          <div class="name">Adnan Al-Farizi Rahmat</div>
+          <div class="sub">Software Developer — Backend & Full Stack</div>
+        </div>
+      </div>
 
-		<div class="portfolioContainer">
-			<div class="p-item web">
-				<a data-fancybox="gallery" href="images/pos.png" data-caption="Aplikasi Point of Sales">
-			    	<img src="images/pos.png">
-				</a>
-			</div>
-			<div class="p-item web">
-				<a data-fancybox="gallery" href="images/sipantau.png" data-caption="Sistem Informasi Pemantauan Kinerja Ditjen Binalattas">
-			    	<img src="images/sipantau.png">
-				</a>
-			</div>
-			<div class="p-item web">
-				<a data-fancybox="gallery" href="images/siperan.png" data-caption="Sistem Informasi Perencanan dan Penganggaran Ditjen Binalattas">
-			    	<img src="images/siperan.png">
-				</a>
-			</div>
-			<div class="p-item web">
-				<a data-fancybox="gallery" href="images/datawarehouse.png" data-caption="Datawarehouse">
-			    	<img src="images/datawarehouse.png">
-				</a>
-			</div>
-			<div class="p-item web">
-				<a data-fancybox="gallery" href="images/rutilahu.png" data-caption="Aplikasi Survey Pelapotan Jawabarat(Rutilahu)">
-			    	<img src="images/rutilahu.png">
-				</a>
-			</div>
-		</div><!-- portfolioContainer -->
-		
-	</section><!-- portfolio-section -->
-	
-	
-	<section class="about-section section">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="heading">
-						<h3><b>About me</b></h3>
-						<h6 class="font-lite-black"><b>PROFESSIONAL PATH</b></h6>
-					</div>
-				</div><!-- col-sm-4 -->
-				<div class="col-sm-8">
-					<p class="margin-b-50">Hallo. Saya Adnan Al-farizi rahmat, Saya adalah seorang yang mempunyai minat di bidang IT, saya menyukai hal baru dan biasa bekerja dalam team. Saya sangat familiar dengan HTML, CSS, Javascript(Jquery, Vue JS), PHP(Codeigniter, Laravel), Dart(Flutter), Java(Dekstop, Android), VB.NET(Dekstop), MYSQL dan POSTGRESQL</p>
-					<div class="row">
-						<div class="col-sm-6 col-md-6 col-lg-3">
-							<div class="radial-prog-area margin-b-30">
-								<div class="radial-progress" data-prog-percent=".99">
-									<div></div>
-									<h6 class="progress-title">WEB Programming</h6>
-								</div>
-							</div><!-- radial-prog-area-->
-						</div><!-- col-sm-6-->
+      <div style="display:flex;gap:8px;align-items:center;">
+        <!-- Download link uses user's uploaded file path per request -->
+        <a class="btn btn-primary" href="/mnt/data/test.pdf" download>
+          ⤓ Download CV
+        </a>
+        <a class="btn btn-ghost" href="https://alfa000.github.io" target="_blank" rel="noopener">Website</a>
+      </div>
+    </div>
 
-						<div class="col-sm-6 col-md-6 col-lg-3">
-							<div class="radial-prog-area margin-b-30">
-								<div class="radial-progress" data-prog-percent=".80">
-									<div></div>
-									<h6 class="progress-title">Mobile Programming</h6>
-								</div>
-							</div><!-- radial-prog-area-->
-						</div><!-- col-sm-6-->
-						
-						<div class="col-sm-6 col-md-6 col-lg-3">
-							<div class="radial-prog-area margin-b-30">
-								<div class="radial-progress" data-prog-percent=".80">
-									<div></div>
-									<h6 class="progress-title">Deskstop Programming</h6>
-								</div>
-							</div><!-- radial-prog-area-->
-						</div><!-- col-sm-6-->
-						
-						<div class="col-sm-6 col-md-6 col-lg-3">
-							<div class="radial-prog-area margin-b-50">
-								<div class="radial-progress" data-prog-percent=".85">
-									<div></div>
-									<h6 class="progress-title">UI / UX</h6>
-								</div>
-							</div><!-- radial-prog-area-->
-						</div><!-- col-sm-6-->
-					
-					</div><!-- row -->
-				</div><!-- col-sm-8 -->
-			</div><!-- row -->
-		</div><!-- container -->
-	</section><!-- about-section -->
-	
-	<section class="experience-section section">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="heading">
-						<h3><b>Work Experience</b></h3>
-						<h6 class="font-lite-black"><b>PREVIOUS JOBS</b></h6>
-					</div>
-				</div>
-				<div class="col-sm-8">
-					<div class="experience margin-b-50">
-						<h4><b>Programmer</b></h4>
-						<h5 class="font-yellow"><b>Tintapuccino.com</b></h5>
-						<h6 class="margin-t-10">APRIL 2020 - December 2020</h6>
-						<!-- <p class="font-semi-white margin-tb-30"></p>
-						<ul class="list margin-b-30">
-							<li>Duis non volutpat arcu, eu mollis tellus.</li>
-							<li>Quis consequat nulla effi citur at.</li>
-							<li>Sed finibus aliquam neque sit.</li>
-						</ul> -->
-					</div>
-					<div class="experience margin-b-50">
-						<h4><b>Programmer</b></h4>
-						<h5 class="font-yellow"><b>Kabayan Consulting</b></h5>
-						<h6 class="margin-t-10">Desember 2019 - APRIL 2020</h6>
-						<!-- <p class="font-semi-white margin-tb-30"></p>
-						<ul class="list margin-b-30">
-							<li>Duis non volutpat arcu, eu mollis tellus.</li>
-							<li>Quis consequat nulla effi citur at.</li>
-							<li>Sed finibus aliquam neque sit.</li>
-						</ul> -->
-					</div>	
-					<div class="experience margin-b-50">
-						<h4><b>IT Support (Magang)</b></h4>
-						<h5 class="font-yellow"><b>CNN Indonesia Biro bandung</b></h5>
-						<h6 class="margin-t-10">MEI 2018 - Agustus 2018</h6>
-						<!-- <p class="font-semi-white margin-tb-30"></p>
-						<ul class="list margin-b-30">
-							<li>Duis non volutpat arcu, eu mollis tellus.</li>
-							<li>Quis consequat nulla effi citur at.</li>
-							<li>Sed finibus aliquam neque sit.</li>
-						</ul> -->
-					</div>	
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- experience-section -->
-	
-	<section class="education-section section">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="heading">
-						<h3><b>Education</b></h3>
-						<h6 class="font-lite-black"><b>ACADEMIC CAREER</b></h6>
-					</div>
-				</div><!-- col-sm-4 -->
-				<div class="col-sm-8">
-					<div class="education-wrapper">
-						<div class="education margin-b-50">
-							<h4><b>SMK Pasim Plus Sukabumi</b></h4>
-							<h5 class="font-yellow"><b>Rekayasa Perangkat Lunak</b></h5>
-							<h6 class="font-lite-black margin-t-10">GRADUATED IN JUN 2019(3 YEARS)</h6>
-						</div><!-- education -->
+    <!-- Hero -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-left">
+        <div class="role">4+ years • Backend · Full Stack · AI · Banking</div>
+        <h1>Adnan Al-Farizi Rahmat</h1>
+        <p class="lead">
+          Passionate about software engineering and AI-assisted products. Berpengalaman membangun Internet Banking, Mobile Banking, SaaS dan solusi RAG/LLM. Fokus pada clean code, reliable APIs, dan skalabilitas produksi.
+        </p>
 
-						<div class="education margin-b-50">
-							<h4><b>SMP Negeri 3 Kota Sukabumi</b></h4>
-							<h6 class="font-lite-black margin-t-10">GRADUATED IN JUN 2016(3 YEARS)</h6>
-						</div><!-- education -->
+        <div class="cta">
+          <a class="btn btn-primary" href="#projects">Lihat Project</a>
+          <a class="btn btn-ghost" href="mailto:adnanarahmat45@gmail.com">Kontak</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/adnan-al-farizi-rahmat/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://alfa000.github.io" target="_blank" rel="noopener">GitHub Pages</a>
+        </div>
 
-						<div class="education margin-b-50">
-							<h4><b>SD Negeri Lembursitu</b></h4>
-							<h6 class="font-lite-black margin-t-10">GRADUATED IN JUN 2013(6 YEARS)</h6>
-						</div><!-- education -->
-						
-					</div><!-- education-wrapper -->
-				</div><!-- col-sm-8 -->
-			</div><!-- row -->
-		</div><!-- container -->
-		
-	</section><!-- about-section -->
-	
-	<!-- <section class="counter-section" id="counter">
-		<div class="container">
-			<div class="row">
-			
-				<div class="col-sm-6 col-md-6 col-lg-3">
-					<div class="counter margin-b-30">
-						<h1 class="title"><b><span class="counter-value" data-duration="400" data-count="3">0</span></b></h1>
-						<h5 class="desc"><b>Coder Degrees</b></h5>
-					</div>
-				</div>
-				
-				<div class="col-sm-6 col-md-6 col-lg-3">
-					<div class="counter margin-b-30">
-						<h1 class="title"><b><span class="counter-value" data-duration="1400" data-count="25">0</span></b></h1>
-						<h5 class="desc"><b>Project Completed</b></h5>
-					</div>
-				</div>
-				
-				<div class="col-sm-6 col-md-6 col-lg-3">
-					<div class="counter margin-b-30">
-						<h1 class="title"><b><span class="counter-value" data-duration="700" data-count="311">0</span></b></h1>
-						<h5 class="desc"><b>Satisfied Clients</b></h5>
-					</div>
-				</div>
-				
-				<div class="col-sm-6 col-md-6 col-lg-3">
-					<div class="counter margin-b-30">
-						<h1 class="title"><b><span class="counter-value" data-duration="2000" data-count="732">0</span></b></h1>
-						<h5 class="desc"><b>Finished Projects</b></h5>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-    </section> -->
-	
-	<footer>
-		<p class="copyright">
-			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ion-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-		</p>
+        <div class="meta" style="margin-top:14px">
+          <div class="muted">Jakarta, Indonesia</div>
+          <div class="muted">+62 800-0000-0000</div>
+          <div class="muted">adnanarahmat45@gmail.com</div>
+        </div>
+      </div>
 
+      <aside class="hero-right" aria-label="Highlights">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div style="font-weight:700">Skills</div>
+          <div class="muted" style="font-size:13px">Top</div>
+        </div>
 
-	</footer>
-	
-	
-	<!-- SCIPTS -->
-	
-	<script src="common-js/jquery-3.2.1.min.js"></script>
-	
-	<script src="fancybox/dist/jquery.fancybox.min.js"></script>
+        <div class="skill-badges" style="margin-top:12px">
+          <div class="badge">Java</div>
+          <div class="badge">Python</div>
+          <div class="badge">PostgreSQL</div>
+          <div class="badge">Spring</div>
+          <div class="badge">Docker</div>
+        </div>
 
-	<script src="common-js/tether.min.js"></script>
-	
-	<script src="common-js/bootstrap.js"></script>
-	
-	<script src="common-js/isotope.pkgd.min.js"></script>
-	
-	<script src="common-js/jquery.waypoints.min.js"></script>
-	
-	<script src="common-js/progressbar.min.js"></script>
-	
-	
-	<script src="common-js/scripts.js"></script>
-	
+        <div style="margin-top:14px">
+          <div class="muted">Frameworks & Tools</div>
+          <div class="skill-list">
+            <div class="pill">Laravel</div>
+            <div class="pill">Flask</div>
+            <div class="pill">React</div>
+            <div class="pill">Vue</div>
+            <div class="pill">Kubernetes</div>
+          </div>
+        </div>
+
+        <div style="margin-top:16px">
+          <div class="muted">Highlights</div>
+          <ul style="margin:8px 0 0 18px;color:var(--muted);font-size:14px">
+            <li>Developed Retail Internet Banking (Affin Bank, CCU Bank)</li>
+            <li>Built RAG & AI assistant (Rei AI)</li>
+            <li>IEEE publication on topic modeling (2024)</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Two-column grid -->
+    <div class="grid" role="main">
+      <main class="card">
+        <!-- About -->
+        <section class="section" id="about">
+          <h3>About</h3>
+          <p class="muted">
+            Passionate about technology and software development. More than 4 years experience across backend, web, and full-stack systems — especially banking systems, AI services, and SaaS products. Suka membangun solusi yang maintainable dan terukur.
+          </p>
+        </section>
+
+        <!-- Experience -->
+        <section class="section" id="experience">
+          <h3>Work Experience</h3>
+          <div class="timeline">
+            <div class="exp">
+              <div class="period">Dec 2024 — Present</div>
+              <div class="body">
+                <h4>PT Wide Technologies Indonesia — Software Developer</h4>
+                <div class="muted">Jakarta, Indonesia</div>
+                <ul>
+                  <li>Developed Retail Internet Banking & Mobile Banking backend (Java, Spring, Hibernate).</li>
+                  <li>Integrasi backend dengan gateway & frontend; memastikan alur perbankan berjalan aman.</li>
+                  <li>Menerapkan best-practices & design patterns.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="exp">
+              <div class="period">Feb 2021 — Nov 2024</div>
+              <div class="body">
+                <h4>PT Lexgo Karya Indonesia — Full Stack Developer</h4>
+                <div class="muted">Remote</div>
+                <ul>
+                  <li>Membangun Rei AI, Lexdigi (Laravel, Flask, Vue, RAG, Vector DBs).</li>
+                  <li>Integrasi berbagai model (ChatGPT, Gemini, MistralAI) & prompt engineering.</li>
+                  <li>Optimasi chunking strategy untuk knowledge embedding.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="exp">
+              <div class="period">May 2019 — May 2020</div>
+              <div class="body">
+                <h4>PT Oriza Sativa Abadi (Tintapuccino) — Programmer</h4>
+                <div class="muted">Bandung, Indonesia</div>
+                <ul>
+                  <li>Mengembangkan Point of Sales, HMIS, dan sistem perencanaan & budgeting (PHP, Laravel).</li>
+                  <li>Pengalaman mengajar web programming untuk ~90 peserta.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section" id="projects">
+          <h3>Selected Projects</h3>
+          <div class="projects-grid">
+            <div class="project">
+              <strong>CCU Premier Mobile</strong>
+              <div class="muted">Mar 2025</div>
+              <p class="muted" style="margin-top:8px">Mobile Banking App — international & local transfer support (SWIFT, NCS).</p>
+              <div class="stack">
+                <div class="pill">Java</div><div class="pill">Spring MVC</div><div class="pill">PostgreSQL</div>
+              </div>
+            </div>
+
+            <div class="project">
+              <strong>Socialabs</strong>
+              <div class="muted">Mar 2024</div>
+              <p class="muted" style="margin-top:8px">Analytics media social — topik & pembicara berdasarkan waktu.</p>
+              <div class="stack">
+                <div class="pill">Python</div><div class="pill">Flask</div><div class="pill">React</div>
+              </div>
+            </div>
+
+            <div class="project">
+              <strong>Splace Classroom</strong>
+              <div class="muted">Nov 2023</div>
+              <p class="muted" style="margin-top:8px">LMS with chatbot Q&A per modul.</p>
+              <div class="stack">
+                <div class="pill">NextJS</div><div class="pill">Flask</div><div class="pill">Azure AI</div>
+              </div>
+            </div>
+
+            <div class="project">
+              <strong>Rei AI</strong>
+              <div class="muted">Nov 2023</div>
+              <p class="muted" style="margin-top:8px">AI assistant using RAG and vector DBs for document QA.</p>
+              <div class="stack">
+                <div class="pill">LangChain</div><div class="pill">Postgres</div><div class="pill">Docker</div>
+              </div>
+            </div>
+
+            <div class="project">
+              <strong>Lexdigi (SaaS)</strong>
+              <div class="muted">Feb 2021</div>
+              <p class="muted" style="margin-top:8px">Document lifecycle & legal templates platform.</p>
+              <div class="stack">
+                <div class="pill">Laravel</div><div class="pill">Vue</div><div class="pill">MySQL</div>
+              </div>
+            </div>
+
+            <div class="project">
+              <strong>Point of Sales</strong>
+              <div class="muted">Apr 2020</div>
+              <p class="muted" style="margin-top:8px">Customizable POS with reporting & promotions.</p>
+              <div class="stack">
+                <div class="pill">PHP</div><div class="pill">JS</div><div class="pill">XLSX</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Education & Publications -->
+        <section class="section" id="education">
+          <h3>Education & Publications</h3>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div>
+              <strong>UNIKOM — Bachelor of Computer Science</strong>
+              <div class="muted">Sep 2020 — Sep 2024 • GPA: 3.75/4.0</div>
+            </div>
+
+            <div>
+              <strong>Publication</strong>
+              <div class="muted">IEEE (2024) — "Enhancing Topic Modeling Coherence through Aggregation"</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Achievements -->
+        <section class="section" id="achievements">
+          <h3>Achievements</h3>
+          <ul style="margin:8px 0 0 18px;color:var(--muted)">
+            <li>Top 10 Finalist — Microsoft Virtual Hackathon 2022</li>
+            <li>Runner Up — LKS Web Design Sukabumi 2019</li>
+          </ul>
+        </section>
+      </main>
+
+      <!-- Sidebar -->
+      <aside>
+        <div class="section card-about">
+          <h3>Contact</h3>
+          <div class="contact-list">
+            <div class="contact-item"><strong>Email:</strong>&nbsp;<a href="mailto:adnanarahmat45@gmail.com">adnanarahmat45@gmail.com</a></div>
+            <div class="contact-item"><strong>Phone:</strong>&nbsp;<a href="tel:+628000000000">+62 800-0000-0000</a></div>
+            <div class="contact-item"><strong>LinkedIn:</strong>&nbsp;<a href="https://www.linkedin.com/in/adnan-al-farizi-rahmat/" target="_blank" rel="noopener">adnan-al-farizi-rahmat</a></div>
+            <div class="contact-item"><strong>Website:</strong>&nbsp;<a href="https://alfa000.github.io" target="_blank" rel="noopener">alfa000.github.io</a></div>
+            <div class="contact-item"><strong>Download CV:</strong>&nbsp;<a href="/mnt/data/test.pdf" download>test.pdf</a></div>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top:12px">
+          <h3>Skills — Technical</h3>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+            <div><strong>Languages:</strong> JavaScript, Java, PHP, Python, Golang, Rust, TypeScript</div>
+            <div><strong>Frameworks:</strong> Spring Boot, Laravel, Django, Flask, NestJS, React, Vue, NextJS</div>
+            <div><strong>Tools:</strong> Docker, Kubernetes, Git, Redis, RabbitMQ, k6, AWS</div>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top:12px">
+          <h3>Organizations</h3>
+          <div class="muted">
+            Vice President — UNIKOM Codelabs (2023–2024) <br/>
+            Co-Head of Tech — Google Developer Student Clubs (2022–2023)
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Adnan Al-Farizi Rahmat — Built with ❤️ • <span class="muted">This is a generated portfolio template.</span>
+    </footer>
+  </div>
+
+  <script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
